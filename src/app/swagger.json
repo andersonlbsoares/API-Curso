@@ -1,0 +1,149 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Trabalho de Reuso de Software",
+        "version": "1.0.0",
+        "description": "API para cadastro de cursos"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3000"
+        }
+    ],
+    "paths": {
+        "/curso": {
+            "get": {
+                "summary": "Lista todos os cursos cadastrados",
+                "responses": {
+                    "200": {
+                        "description": "Lista dos cursos retornada com sucesso"
+                    }
+                }
+            },
+            "post": {
+                "summary": "Cadastra um novo curso",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "nomeCurso": {
+                                        "type": "string"
+                                    },
+                                    "cargaHorariaCurso": {
+                                        "type": "string"
+                                    },
+                                    "docenteCurso": {
+                                        "type": "string"
+                                    },
+                                    "localCurso": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                  "nomeCurso",
+                                  "cargaHorariaCurso",
+                                  "docenteCurso",
+                                  "localCurso"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Curso cadastrado com sucesso"
+                    }
+                }
+            }
+        },
+        "/curso/{id}": {
+            "get": {
+                "summary": "Busca um curso pelo ID",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Curso retornado com sucesso"
+                    }
+                }
+            },
+            "put": {
+                "summary": "Atualiza um curso pelo ID",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "nomeCurso": {
+                                        "type": "string"
+                                    },
+                                    "cargaHorariaCurso": {
+                                        "type": "string"
+                                    },
+                                    "docenteCurso": {
+                                        "type": "string"
+                                    },
+                                    "localCurso": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                  "nomeCurso",
+                                  "cargaHorariaCurso",
+                                  "docenteCurso",
+                                  "localCurso"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Curso atualizado com sucesso"
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Deleta um curso pelo ID",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Curso deletado com sucesso"
+                    }
+                }
+            }
+        }
+    }
+}
