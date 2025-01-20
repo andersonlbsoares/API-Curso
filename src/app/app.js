@@ -5,6 +5,7 @@ import swaggerUi from 'swagger-ui-express'
 import swaggerDocument from './swagger.json' assert { type: 'json' };
 
 const app = express()
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.use(
   cors({
@@ -14,7 +15,6 @@ app.use(
   })
 )
 
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use(express.json())
 app.use(routes)
 export default app
