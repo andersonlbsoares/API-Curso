@@ -14,7 +14,7 @@ app.use(
   })
 )
 
-app.use(express.json())
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use(express.json())
 app.use(routes)
 export default app
