@@ -3,10 +3,10 @@ import express from 'express'
 
 const router = express.Router()
 
-router.post('/curso', CursoController.store)
-router.put('/curso/:idCurso', CursoController.updateById)
-router.get('/curso/:idCurso', CursoController.findById)
-router.get('/curso', CursoController.findAll)
-router.delete('/curso/:idCurso', CursoController.deleteById)
+router.post('/cursos', CursoController.store)
+router.put('/cursos/:idCurso', CursoController.updateById)
+router.get('/cursos/:idCurso', CursoController.findById)
+router.get('/cursos', CursoController.findAll)
+router.delete('/cursos/:idCurso', CursoController.deleteById)
 
 export default router

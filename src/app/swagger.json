@@ -7,11 +7,11 @@
     },
     "servers": [
         {
-            "url": "http://localhost:3000"
+            "url": "https://reuso.andersonlbsoares.com.br"
         }
     ],
     "paths": {
-        "/curso": {
+        "/cursos": {
             "get": {
                 "summary": "Lista todos os cursos cadastrados",
                 "responses": {
@@ -59,7 +59,7 @@
                 }
             }
         },
-        "/curso/{id}": {
+        "/cursos/{id}": {
             "get": {
                 "summary": "Busca um curso pelo ID",
                 "parameters": [
